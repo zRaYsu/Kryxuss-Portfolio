@@ -93,14 +93,9 @@
                             <div class="skill-pill">
                                 <i class="fab fa-git-alt"></i>
                                 <span>Git</span>
-                            </div>
-                            <div class="skill-pill">
+                            </div>                            <div class="skill-pill">
                                 <i class="fab fa-github"></i>
                                 <span>GitHub</span>
-                            </div>
-                            <div class="skill-pill minecraft">
-                                <i class="fas fa-cube"></i>
-                                <span>Minecraft</span>
                             </div>
                         </div>
                     </div>
@@ -244,7 +239,6 @@
         </div>
     </footer>    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Animación de entrada para las tarjetas
             const cards = document.querySelectorAll('.card');
             cards.forEach((card, index) => {
                 setTimeout(() => {
@@ -252,11 +246,9 @@
                 }, index * 150);
             });
             
-            // Sistema de navegación entre secciones
             const navButtons = document.querySelectorAll('.icon-button[data-section]');
             const sections = document.querySelectorAll('.section');
             
-            // Mostrar sólo la sección activa (home por defecto)
             function showActiveSection(sectionId) {
                 sections.forEach(section => {
                     section.classList.remove('active');
@@ -273,14 +265,12 @@
                 });
             }
             
-            // Event listeners para los botones de navegación
             navButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
                     const sectionId = this.getAttribute('data-section');
                     showActiveSection(sectionId);
                     
-                    // Efecto ripple en el botón
                     const iconContainer = this.querySelector('.icon-container');
                     const ripple = document.createElement('span');
                     ripple.classList.add('ripple');
@@ -292,19 +282,16 @@
                 });
             });
 
-            // Sistema de partículas para el fondo
             function createParticles() {
                 const particlesContainer = document.getElementById('particles');
                 const numberOfParticles = 30;
                 
-                // Eliminar partículas existentes
                 particlesContainer.innerHTML = '';
                 
                 for (let i = 0; i < numberOfParticles; i++) {
                     const particle = document.createElement('div');
                     particle.classList.add('particle');
                     
-                    // Generar valores aleatorios para las partículas
                     const size = Math.random() * 5 + 2;
                     const posX = Math.random() * 100;
                     const posY = Math.random() * 100;
@@ -312,7 +299,6 @@
                     const duration = Math.random() * 10 + 10;
                     const brightness = Math.random() * 50 + 50;
                     
-                    // Aplicar estilos
                     particle.style.width = `${size}px`;
                     particle.style.height = `${size}px`;
                     particle.style.left = `${posX}%`;
@@ -322,7 +308,6 @@
                     particle.style.setProperty('--duration', `${duration}s`);
                     particle.style.filter = `brightness(${brightness}%)`;
                     
-                    // Generar un color aleatorio para la partícula
                     const colors = ['#9c77ff', '#6a11cb', '#2575fc', '#4e44ce'];
                     const randomColor = colors[Math.floor(Math.random() * colors.length)];
                     particle.style.backgroundColor = randomColor;
@@ -331,13 +316,10 @@
                 }
             }
 
-            // Iniciar sistema de partículas
             createParticles();
 
-            // Recrear partículas al redimensionar la ventana
             window.addEventListener('resize', createParticles);
             
-            // Efecto especial para el fondo cuando se muestra la sección de inicio
             function checkHomeSection() {
                 const homeSection = document.getElementById('home');
                 if (homeSection.classList.contains('active')) {
@@ -347,12 +329,11 @@
                 }
             }
             
-            // Comprobar la sección de inicio cuando se cambia de sección
             navButtons.forEach(button => {
                 button.addEventListener('click', checkHomeSection);
             });
             
-            // Comprobar la sección de inicio al cargar la página
+
             checkHomeSection();
         });
     </script>
