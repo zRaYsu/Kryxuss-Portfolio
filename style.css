@@ -211,6 +211,7 @@ body {
     border-radius: 20px;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
+    color: #9c77ff;
 }
 
 .skill-pill:hover {
@@ -233,7 +234,7 @@ body {
     height: 1.1rem;
     margin-right: 0.5rem;
     vertical-align: -0.1rem;
-    filter: brightness(0) saturate(100%) invert(65%) sepia(58%) saturate(5312%) hue-rotate(225deg) brightness(87%) contrast(93%);
+    color: #9c77ff !important;
     transition: transform 0.3s ease;
 }
 
