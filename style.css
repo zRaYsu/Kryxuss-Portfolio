@@ -807,17 +807,121 @@ footer {
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.8rem;
+    body {
+        font-size: 15px;
     }
-    
+    .container {
+        width: 100vw;
+        min-width: 100vw;
+        max-width: 100vw;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        min-height: 100vh;
+        max-height: 100vh;
+    }
+    .card {
+        padding: 1rem 0.5rem;
+        max-width: 100vw;
+        width: 100vw;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        max-height: 90vh;
+    }
+    .about-card {
+        padding-bottom: 1rem;
+    }
+    .info-cards-container {
+        gap: 0.7rem;
+        margin: 1rem 0;
+    }
+    .info-card {
+        padding: 1rem 0.5rem;
+        min-width: unset;
+    }
+    .skills-grid {
+        gap: 0.4rem;
+    }
+    .skill-pill {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.85rem;
+    }
+    .about-text {
+        margin: 1rem 0;
+    }
+    .minecraft-skills {
+        margin-top: 1rem;
+    }
+    .mc-skills-container {
+        gap: 0.7rem;
+        margin-top: 1rem;
+    }
+    .mc-skill {
+        margin-bottom: 0.5rem;
+    }
+    .project-image {
+        height: 140px;
+    }
+    .projects-grid {
+        gap: 0.7rem;
+        margin-top: 0.5rem;
+    }
+    .project-card {
+        padding: 1rem 0.5rem;
+    }
+    .contact-links {
+        gap: 0.7rem;
+        margin-top: 1rem;
+    }
+    .contact-link {
+        gap: 0.7rem;
+        padding: 0.3rem;
+    }
+    .icon-tooltip {
+        font-size: 0.7rem;
+        padding: 3px 7px;
+    }
+    footer {
+        padding: 0.3rem;
+    }
     .social-icons {
-        padding: 0.5rem;
+        padding: 0.3rem;
+        gap: 0.4rem;
     }
-    
     .icon-button {
-        width: 35px;
-        height: 35px;
+        width: 32px;
+        height: 32px;
+    }
+    .icon-container {
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 1.3rem;
+        gap: 0.3rem;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    h3 {
+        font-size: 1rem;
+    }
+    .logo-img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+@media (max-width: 375px) {
+    .container, .card {
+        padding: 0.2rem 0.1rem;
+    }
+    .project-image {
+        height: 100px;
+    }
+    .logo-img {
+        width: 18px;
+        height: 18px;
     }
 }
 
