@@ -107,7 +107,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Listeners para imágenes de proyectos (DarkLegacyMC y Squid Game)
     console.log('Buscando elementos de imágenes...');
     const dlmcImg = document.getElementById('dlmc-img');
     const squidgameImg = document.getElementById('squidgame-img');
@@ -123,14 +122,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const ip = 'play.darklegacy.es';
             
-            // Mostrar tooltip inmediatamente
             let tooltip = document.createElement('div');
             tooltip.className = 'ip-tooltip';
             tooltip.innerText = 'Copiando IP...';
             dlmcImg.parentElement.style.position = 'relative';
             dlmcImg.parentElement.appendChild(tooltip);
             
-            // Intentar copiar al portapapeles
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(ip).then(() => {
                     tooltip.innerText = '¡IP copiada al portapapeles!';
@@ -140,7 +137,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     tooltip.innerText = 'IP: ' + ip + ' (copia manualmente)';
                 });
             } else {
-                // Fallback para navegadores que no soportan clipboard API
                 try {
                     const textArea = document.createElement('textarea');
                     textArea.value = ip;
@@ -180,7 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('No se encontró la imagen squidgame-img');
     }
 
-    // Función de prueba para verificar que las imágenes funcionan
     window.testImageClicks = function() {
         console.log('Probando clicks en imágenes...');
         const dlmcImg = document.getElementById('dlmc-img');
