@@ -277,6 +277,34 @@
                 </div>
             </div>
         </section>
+
+        <section id="donate" class="section">
+            <div class="card">
+                <h2>Apoya mi trabajo</h2>
+                <p>
+                    ¡Hola! Soy <span class="highlight purple">Kryxuss</span>. Si te mola lo que hago, desde mejorar servidores de Minecraft hasta crear estas locuras, puedes invitarme a un café (o a varios). Cada euro me ayuda a dedicarle más tiempo a mis proyectos y a seguir aprendiendo como un puto enfermo :P.
+                </p>
+                
+                <div class="donation-container">
+                    <h3>Elige una cantidad:</h3>
+                    <div class="donation-presets">
+                        <button class="donation-button" data-amount="1">1€</button>
+                        <button class="donation-button" data-amount="3">3€</button>
+                        <button class="donation-button" data-amount="5">5€</button>
+                        <button class="donation-button" data-amount="8">8€</button>
+                        <button class="donation-button" data-amount="10">10€</button>
+                        <button class="donation-button" data-amount="15">15€</button>
+                        <button class="donation-button" data-amount="25">25€</button>
+                    </div>
+
+                    <h3>O pon la que te salga de los cojones:</h3>
+                    <div class="custom-donation">
+                        <input type="number" id="custom-amount" placeholder="Ej: 50" min="1">
+                        <button id="donate-custom-btn">Donar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -307,6 +335,12 @@
                     <i class="fab fa-github"></i>
                 </div>
                 <span class="icon-tooltip">GitHub</span>
+            </a>
+            <a href="#donate" class="icon-button" data-section="donate">
+                <div class="icon-container">
+                    <i class="fas fa-coffee"></i>
+                </div>
+                <span class="icon-tooltip">Dóname</span>
             </a>
         </div>
     </footer>    <script src="script.js"></script>

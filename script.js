@@ -193,4 +193,33 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     console.log('Script cargado completamente. Puedes ejecutar testImageClicks() en la consola para probar.');
+
+    // --- LÓGICA PARA LA PUTA SECCIÓN DE DONACIONES ---
+    const paypalEmail = "zraysuelmejor@gmail.com"; // <-- ¡¡¡CAMBIA ESTA PUTA MIERDA!!!
+
+    function redirectToPaypal(amount) {
+        if (amount && !isNaN(amount) && amount >= 1) {
+            const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=${paypalEmail}&item_name=Donación+para+el+trabajo+de+Kryxuss&amount=${amount}&currency_code=EUR`;
+            window.open(paypalUrl, '_blank');
+        } else {
+            alert("Por favor, introduce una cantidad válida (mínimo 1€).");
+        }
+    }
+
+    document.querySelectorAll('.donation-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const amount = button.getAttribute('data-amount');
+            redirectToPaypal(amount);
+        });
+    });
+
+    const customAmountInput = document.getElementById('custom-amount');
+    const donateCustomBtn = document.getElementById('donate-custom-btn');
+
+    if (donateCustomBtn) {
+        donateCustomBtn.addEventListener('click', () => {
+            const amount = customAmountInput.value;
+            redirectToPaypal(amount);
+        });
+    }
 });
