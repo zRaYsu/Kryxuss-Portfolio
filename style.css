@@ -255,81 +255,6 @@ body {
     margin-bottom: 1rem;
 }
 
-.minecraft-skills {
-    margin-top: 1.5rem;
-}
-
-.minecraft-skills h3 {
-    margin-bottom: 1.2rem;
-    position: relative;
-    display: inline-block;
-}
-
-.minecraft-skills h3:after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 60%;
-    height: 3px;
-    background: linear-gradient(90deg, #4CAF50 0%, rgba(76, 175, 80, 0) 100%);
-    border-radius: 2px;
-}
-
-.mc-skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    margin-top: 1.5rem;
-}
-
-.mc-skill {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0.8rem;
-}
-
-.mc-skill-icon {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(76, 175, 80, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-}
-
-.mc-skill-icon i {
-    color: #4CAF50;
-    font-size: 1.2rem;
-}
-
-.mc-skill-info {
-    flex-grow: 1;
-}
-
-.mc-skill-info h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.skill-bar {
-    width: 100%;
-    height: 6px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, #4CAF50, #8BC34A);
-    border-radius: 3px;
-}
-
 @media (max-width: 768px) {
     .info-cards-container {
         flex-direction: column;
@@ -341,10 +266,6 @@ body {
     
     .info-label {
         margin-bottom: 0.3rem;
-    }
-    
-    .mc-skills-container {
-        flex-direction: column;
     }
 }
 
@@ -372,9 +293,35 @@ body {
 
 .hero-card {
     text-align: center;
-    padding: 2rem 1.5rem;
-    max-width: 400px;
+    padding: 2.1rem 1.7rem;
+    max-width: 560px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(156, 119, 255, 0.22), rgba(156, 119, 255, 0) 48%),
+        radial-gradient(circle at 88% 82%, rgba(106, 17, 203, 0.2), rgba(106, 17, 203, 0) 52%),
+        linear-gradient(155deg, rgba(33, 36, 56, 0.94), rgba(24, 27, 43, 0.9));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 16px 34px rgba(4, 7, 17, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-kicker {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #e7ddff;
+    background-color: rgba(156, 119, 255, 0.14);
+    border: 1px solid rgba(156, 119, 255, 0.34);
 }
 
 h1 {
@@ -439,6 +386,56 @@ p {
 .subtitle {
     font-size: 1.2rem;
     margin-bottom: 0.75rem;
+}
+
+.hero-lead {
+    font-size: 1.15rem;
+    margin: 0.95rem auto 1.4rem;
+    color: rgba(255, 255, 255, 0.84);
+    max-width: 30ch;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.hero-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 145px;
+    padding: 0.7rem 1.1rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.hero-action.primary {
+    color: #fff;
+    background: linear-gradient(90deg, #7c54f2 0%, #9c77ff 52%, #6a11cb 100%);
+    box-shadow: 0 8px 22px rgba(124, 84, 242, 0.38);
+}
+
+.hero-action.secondary {
+    color: #fff;
+    background-color: rgba(156, 119, 255, 0.1);
+    border: 1px solid rgba(156, 119, 255, 0.3);
+}
+
+.hero-action:hover {
+    transform: translateY(-2px);
+}
+
+.hero-action.primary:hover {
+    box-shadow: 0 10px 24px rgba(124, 84, 242, 0.52);
+}
+
+.hero-action.secondary:hover {
+    background-color: rgba(156, 119, 255, 0.2);
 }
 
 .role, .cta {
@@ -804,6 +801,10 @@ footer {
     .hero-card {
         padding: 2rem 1rem;
     }
+
+    .hero-lead {
+        font-size: 1.05rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -849,16 +850,6 @@ footer {
     }
     .about-text {
         margin: 1rem 0;
-    }
-    .minecraft-skills {
-        margin-top: 1rem;
-    }
-    .mc-skills-container {
-        gap: 0.7rem;
-        margin-top: 1rem;
-    }
-    .mc-skill {
-        margin-bottom: 0.5rem;
     }
     .project-image {
         height: 140px;
@@ -910,6 +901,21 @@ footer {
         width: 22px;
         height: 22px;
     }
+    .hero-kicker {
+        font-size: 0.72rem;
+    }
+    .hero-lead {
+        font-size: 0.98rem;
+        margin-bottom: 1rem;
+    }
+    .hero-actions {
+        gap: 0.55rem;
+    }
+    .hero-action {
+        min-width: 132px;
+        padding: 0.62rem 0.9rem;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 375px) {
@@ -930,102 +936,6 @@ footer {
 .hero-card .role,
 .hero-card .cta {
 user-select: none;
-}
-
-.web-skills {
-    margin-top: 1.5rem;
-}
-
-.web-skills h3 {
-    margin-bottom: 1.2rem;
-    position: relative;
-    display: inline-block;
-}
-
-.web-skills h3:after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 60%;
-    height: 3px;
-    background: linear-gradient(90deg, #007acc 0%, rgba(0, 122, 204, 0) 100%);
-    border-radius: 2px;
-}
-
-.web-skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    margin-top: 1.5rem;
-}
-
-.web-skill {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0.8rem;
-}
-
-.web-skill-icon {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 122, 204, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 1rem;
-}
-
-.web-skill-icon i {
-    color: #007acc;
-    font-size: 1.2rem;
-}
-
-.web-skill-info {
-    flex-grow: 1;
-}
-
-.web-skill-info h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1rem;
-    font-weight: 500;
-}
-
-.web-skill .skill-bar {
-    width: 100%;
-    height: 6px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-}
-
-.web-skill .skill-progress {
-    height: 100%;
-    background: linear-gradient(90deg, #007acc, #00a2ff);
-    border-radius: 3px;
-}
-
-@media (max-width: 768px) {
-    .web-skills-container {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .web-skills {
-        margin-top: 1rem;
-    }
-    
-    .web-skills-container {
-        gap: 0.7rem;
-        margin-top: 1rem;
-    }
-    
-    .web-skill {
-        margin-bottom: 0.5rem;
-    }
 }
 
 .ip-tooltip {

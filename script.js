@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const navButtons = document.querySelectorAll('.icon-button[data-section]');
     const sections = document.querySelectorAll('.section');
+    const sectionLinks = document.querySelectorAll('[data-section-link]');
     
     function showActiveSection(sectionId) {
         sections.forEach(section => {
@@ -41,6 +42,15 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 ripple.remove();
             }, 600);
+        });
+    });
+
+    sectionLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const sectionId = this.getAttribute('data-section-link');
+            showActiveSection(sectionId);
+            checkHomeSection();
         });
     });
 
