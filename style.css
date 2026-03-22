@@ -16,6 +16,56 @@ body {
     justify-content: center;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    html,
+    body,
+    *,
+    *::before,
+    *::after {
+        cursor: none !important;
+    }
+}
+
+#cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: #00ff88;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, background 0.2s;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+#cursor-trail {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: left 0.12s, top 0.12s;
+}
+
+@media (hover: none), (pointer: coarse) {
+    html,
+    body,
+    *,
+    *::before,
+    *::after {
+        cursor: auto;
+    }
+
+    #cursor,
+    #cursor-trail {
+        display: none;
+    }
+}
+
 .gradient-background {
     position: fixed;
     top: 0;
